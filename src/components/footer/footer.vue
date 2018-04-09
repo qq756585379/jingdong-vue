@@ -1,21 +1,11 @@
 <template>
-  <div class="jd_footer">
-    <router-link :key="1" to="/a">
-      <img src="../../assets/images/footer/a-home.png" alt="">
-    </router-link>
-    <router-link :key="2" to="/a">
-      <img src="../../assets/images/footer/n-cart.png" alt="">
-    </router-link>
-    <router-link :key="3" to="/a">
-      <img src="../../assets/images/footer/n-catergry.png" alt="">
-    </router-link>
-    <router-link :key="4" to="/a">
-      <img src="../../assets/images/footer/n-find.png" alt="">
-    </router-link>
-    <router-link :key="5" to="/a">
-      <img src="../../assets/images/footer/n-me.png" alt="">
-    </router-link>
-  </div>
+  <ul class="jd_footer">
+    <li :class="['barIcon','home',$route.name==='home'?'active':'']" @click="$router.push('/home')"></li>
+    <li :class="['barIcon','category',$route.name==='category'?'active':'']" @click="$router.push('/category')"></li>
+    <li :class="['barIcon','find',$route.name==='find'?'active':'']" @click="$router.push('/find')"></li>
+    <li :class="['barIcon','cart',$route.name==='shopcart'?'active':'']" @click="$router.push('/shopcart')"></li>
+    <li :class="['barIcon','myHome',$route.name==='my'?'active':'']" @click="$router.push('/my')"></li>
+  </ul>
 </template>
 
 <script type="text/ecmascript-6">
@@ -23,7 +13,6 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scope>
-
   .jd_footer {
     position: fixed;
     bottom: 0;
@@ -37,18 +26,25 @@
     box-shadow: 0 -1px 1px #ccc;
     color: #fff;
     background: #fff;
-    & > a {
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    .barIcon {
       flex: 1;
       text-align: center;
       display: block;
       font-size: 14px;
       color: rgb(77, 85, 93);
       height: 100%;
-      &.router-link-active {
-        color: red;
-      }
-      img {
-        width: 75px;
+      cursor: pointer;
+      background: url('../../assets/images/footer/navbar.png') 0 0 no-repeat;
+    }
+    .home {
+      background-position: 0% 0%;
+      &.active {
+        background-position: -1.585rem -0.02rem;
       }
     }
   }
