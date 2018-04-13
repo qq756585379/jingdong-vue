@@ -35,17 +35,22 @@
       flex: 1;
       text-align: center;
       display: block;
+      border: solid 1px rebeccapurple;
       font-size: 14px;
       color: rgb(77, 85, 93);
       height: 100%;
       cursor: pointer;
       background: url('../../assets/images/footer/navbar.png') 0 0 no-repeat;
+      background-size: auto 54px;
     }
     .home {
-      background-position: 0% 0%;
+      background-position: -20px 0;
       &.active {
         background-position: -1.585rem -0.02rem;
       }
+    }
+    .category {
+      background-position: -130px 0;
     }
   }
 </style>
